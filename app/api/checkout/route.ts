@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: Request) {
@@ -20,6 +20,8 @@ export async function POST(request: Request) {
   if (!course) {
     return NextResponse.json({ error: "Course not found" }, { status: 404 });
   }
+
+  const stripe = getStripe();
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",

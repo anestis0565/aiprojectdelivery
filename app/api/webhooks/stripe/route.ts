@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { headers } from "next/headers";
-import { stripe } from "@/lib/stripe";
+import { getStripe } from "@/lib/stripe";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
@@ -8,6 +8,8 @@ export const runtime = "nodejs";
 export async function POST(request: Request) {
   const body = await request.text();
   const sig = (await headers()).get("stripe-signature")!;
+
+  const stripe = getStripe();
 
   let event;
   try {
