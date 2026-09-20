@@ -49,7 +49,7 @@ export default function WaitlistForm() {
         {status === "loading" ? "Joining…" : "Join the waitlist"}
       </button>
       {status === "error" && <p className="text-red-600 text-sm">{msg}</p>}
-      <<p className="text-xs text-slate-500 text-center">No spam. Just a launch note and an early-bird discount.</p>
+      <p className="text-xs text-slate-500 text-center">No spam. Just a launch note and an early-bird discount.</p>
     </form>
   );
 }
