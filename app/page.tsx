@@ -37,23 +37,25 @@ export default function LandingPage() {
         </div>
       </section>
 
-                 <section className="bg-slate-50">
+      <section className="bg-slate-50">
         <div className="mx-auto max-w-5xl px-6 py-16">
           <p className="text-sm font-semibold uppercase tracking-widest text-teal-700">The method</p>
-          <h2 className="mt-2 text-2xl md:text-3xl font-bold">PACER Hybrid&trade;: built for AI delivery, on the disciplines you already trust.</h2>
-          <p className="mt-3 max-w-2xl text-slate-600">Not a replacement for PMBOK, PRINCE2 or Scrum. PACER Hybrid consolidates five disciplines into one operating model. Three you already know, and two that AI makes essential.</p>
+          <h2 className="mt-2 text-2xl md:text-3xl font-bold">PACER Hybrid&trade;</h2>
+          <p className="mt-1 text-lg text-slate-700">Five connected disciplines for responsible AI project delivery.</p>
+          <p className="mt-3 max-w-2xl text-slate-600">Rather than a replacement for PMBOK, PRINCE2 and other methods, PACER Hybrid consolidates five disciplines into one operating model that gives each a clear purpose within AI delivery.Three that you may already know, and two that AI makes essential.</p>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-6 gap-4">
             {[
-              ["P", "Project governance", "Decision rights, and the go, stop or adjust gates that keep you in control.", "border-teal-600", "text-teal-600"],
-              ["A", "Agile delivery", "An iterative delivery cadence, adapted for the realities of AI.", "border-amber-500", "text-amber-500"],
-              ["C", "CRISP-DM lifecycle", "The data-centric phases the work actually moves through.", "border-rose-500", "text-rose-500"],
-              ["E", "Ethical and evidence-based evaluation", "Success judged on performance and fairness, not a simple pass or fail.", "border-indigo-600", "text-indigo-600"],
-              ["R", "Risk, release and review", "Running it safely once live: monitoring, drift and retraining.", "border-sky-600", "text-sky-600"],
-            ].map(([letter, name, d, border, text], i) => (
+              ["P", "Project governance", "Business case, sponsorship, decision rights, scope, funding, schedule, dependencies and escalation.", "PMBOK • PRINCE2 • Organisational governance", "border-teal-600", "text-teal-600"],
+              ["A", "Agile delivery", "Short planning horizons, prioritised work, stakeholder feedback, visible increments and adaptation as evidence emerges.", "Agile • Scrum • Kanban • Product practices", "border-amber-500", "text-amber-500"],
+              ["C", "CRISP-DM lifecycle", "Business and data understanding, preparation, modelling, evaluation and deployment through iterative learning.", "CRISP-DM • CRISP-ML(Q) • Data science practice", "border-rose-500", "text-rose-500"],
+              ["E", "Ethical and evidence-based evaluation", "Quality, safety, fairness, explainability, privacy, security and human oversight.", "NIST AI RMF • ISO/IEC 42001 • Assurance policy", "border-indigo-600", "text-indigo-600"],
+              ["R", "Risk, release and continuous review", "Controlled release, monitoring, drift, incidents, retraining, benefits review and retirement.", "MLOps • Service management • Benefits realisation", "border-sky-600", "text-sky-600"],
+            ].map(([letter, name, d, foundations, border, text], i) => (
               <div key={letter} className={`rounded-xl border-t-4 ${border} bg-white p-6 shadow-sm sm:col-span-2 ${i === 3 ? "sm:col-start-2" : ""}`}>
                 <span className={`text-2xl font-extrabold ${text}`}>{letter}</span>
                 <p className="mt-1 text-lg font-bold">{name}</p>
                 <p className="mt-2 text-sm text-slate-600">{d}</p>
+                <p className="mt-3 text-xs font-semibold text-slate-400">{foundations}</p>
               </div>
             ))}
           </div>
